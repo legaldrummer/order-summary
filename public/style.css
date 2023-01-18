@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;800&display=swap');
+
+/* 
+Primary
+
+- Pale blue: hsl(225, 100%, 94%)
+- Bright blue: hsl(245, 75%, 52%)
+
+Neutral
+
+- Very pale blue: hsl(225, 100%, 98%)
+- Desaturated blue: hsl(224, 23%, 55%)
+- Dark blue: hsl(223, 47%, 23%) 
+*/
+
+:root {
+  --paleBlue: hsl(225, 100%, 94%);
+  --brightBlue: hsl(245, 75%, 52%);
+  --nPaleBlue: hsl(225, 100%, 98%);
+  --desatBlue: hsl(224, 23%, 55%);
+  --darkBlue: hsl(223, 47%, 23%);
+  --maxCardBody: 85%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Red Hat Display", Courier, monospace;
+}
+
+.card {
+  border-radius: 15px;
+  box-shadow: 0px 19px 38px rgba(0 0 0 / 30%), 0px 19px 38px rgba(0 0 0 / 10%);
+}
+
+.card svg {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.card-body pre {
+  font-family: inherit;
+  color: var(--desatBlue);
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0.75rem;
+  width: var(--maxCardBody);
+  border-radius: 15px;
+  padding: 1rem;
+  background-color: var(--nPaleBlue);
+  font-weight: 700;
+}
+
+.plans span:nth-child(2) {
+  font-weight: 500;
+  color: var(--desatBlue);
+}
+
+.plans svg {
+  justify-self: center;
+}
+
+.plans div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.plans h6 {
+  align-self: center;
+  text-decoration: underline;
+  color: var(--brightBlue);
+}
+
+.plans h6:hover {
+  text-decoration: none;
+  color: var(--darkBlue);
+  cursor: pointer;
+}
+
+.card-button {
+  width: var(--maxCardBody);
+  padding: 1rem;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--paleBlue);
+  border: none;
+  border-radius: 15px;
+  background-color: var(--brightBlue);
+  box-shadow: 0px 8px 20px rgba(0 0 0 / 30%), 0px 8px 20px rgba(0 0 0 / 10%);
+}
+
+.card-button:hover {
+  background-color: var(--darkBlue);
+  cursor: pointer;
+  animation: 0.25s ease-in 0s flash;
+}
+
+.card-cancel-button {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--desatBlue);
+}
+
+.card-cancel-button:hover {
+  cursor: pointer;
+  color: black;
+}
+
+@keyframes flash {
+  from {
+    background-color: var(--brightBlue);
+  }
+  to {
+    background-color: var(--darkBlue);
+  }
+}
